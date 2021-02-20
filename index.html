@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Text Statistics with Tensorflow.JS Toxicity Check</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity"></script>
+
+<p id="instructions">Check the <em>Enable Toxicity Check</em> checkbox. Write something... toxic and click the <em>Check Toxicity</em> button to check how toxic you can be. 😛</p>
+
+<main>
+  <div class="loading">Loading...</div>
+  <section class="info">
+    <div>
+      <span class="count" id="info-word_count">0</span> words <span class="count" id="info-char_count">0</span> characters
+    </div>
+    <div>
+      <form class="options">
+        <label for="word_count">Words limit</label>
+        <input id="word_count" min="1" max="1000" type="number" />
+        <label for="char_count">Characters limit</label>
+        <input id="char_count" min="1" max="1000" type="number" />
+        <input type="submit" style="position: absolute; left: -9999px"/>
+      </form>
+    </div>
+    <div>
+      <p>Reading time: <strong><span id="reading-time">0</span> minutes</strong></p>
+      <div>
+        <input type="checkbox" id="enable_toxicity">
+        <label for="enable_toxicity">Enable Toxicity Check</label>
+        <button id="toxic" disabled>Check Toxicity</button>
+      </div>
+    </div>
+  </section>
+  <textarea>I will look for you, I will find you and I will kill you</textarea>  
+  <section class="toxicity-wrapper">
+    <div class="cat identity_attack">Identity Attack</div>
+    <div class="cat insult">Insult</div> 
+    <div class="cat obscene">Obscene</div>
+    <div class="cat severe_toxicity">Severe Toxicity</div>
+    <div class="cat sexual_explicit">Sexual Explicit</div>
+    <div class="cat threat">Threat</div>
+    <div class="cat toxicity">Toxicity</div>
+  </section>
+</main>
+
+<p class="powered">Powered by <img width="100" src="https://www.gstatic.com/devrel-devsite/prod/vfe8af62599ec445552c3fb43608c37ff46463c9fce3b14d8ee63b2e71edddffd/tensorflow/images/lockup.svg"></p>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

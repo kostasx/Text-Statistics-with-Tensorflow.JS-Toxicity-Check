@@ -1,0 +1,120 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: lightgray;
+  font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+}
+textarea {
+  width: 100%;
+  height: 200px;
+}
+main {
+  background: #eee;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 36px 24px rgba(0,0,0,0.1);
+  position: relative;
+}
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.info > div:nth-child(3){
+  width: 100%;
+  border-top: 1px solid lightgray;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.count {
+  display: inline-block;
+  min-width: 4rem;
+  padding: 2px 0;
+  text-align: center;
+}
+#info-word_count, #info-char_count {
+  border-radius: 32px;
+  margin-right: 5px;
+}
+#info-word_count {
+  background: lightgreen;
+}
+#info-char_count {
+  background: skyblue;
+  margin-left: 5px;
+}
+.toxicity-wrapper {
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+}
+#toxic {
+  background: gray;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+#toxic:disabled {
+  opacity: 0.3;
+}
+#toxic.checking {
+  background: tomato;
+}
+.cat {
+  background: lightgray;
+  color: white;
+  /* background: hotpink; */
+  padding: 4px 10px;
+}
+.loading {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 1s ease;
+  background: gray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 3rem;
+  font-weight: 100;
+  display: grid;
+  place-items: center;
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes blink {
+  from {
+    color: white;
+  }
+  to {
+    color: #909090;
+  }
+}
+.powered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+.powered img {
+  margin-left: 10px;
+}
+#instructions {
+  max-width: 800px;
+  margin: 0 auto;
+}
